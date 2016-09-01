@@ -1,0 +1,8 @@
+#Simple Powershell code I use to backup the Space Engineers game data. Hardest bit was getting the time data and inserting it as a file name.
+#Variables for specifying script operation.
+$Backup = "D:\Backups\$(Get-Date -Format yyyy-MM-dd-hh-mm-ss)"
+$Directory = "$env:APPDATA\SpaceEngineersDedicated"
+#Script Logic
+Write-Host($Date)
+Copy-Item -Path $Directory -Destination $Backup -Recurse -Force
+Write-Host("Operation Complete! Please Check that the job Completed Sucessfully.")
